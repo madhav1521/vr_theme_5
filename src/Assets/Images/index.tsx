@@ -29,3 +29,10 @@ export const country_sales = require('./pie-chart.svg').default
 export const searchicon = require('./search-ic.svg').default
 export const notification = require('./notification.svg').default
 export const profile = require('./profile.png')
+
+export const upload_icon = require('./upload-ic.svg') .default
+export const error = require('./ic-error.svg') .default
+export const info = require('./ic-info.svg') .default
+export const valid = require('./ic-success.svg') .default
+export const warn = require('./ic-warn.svg') .default
+export const select_arrow = require('./select-arrow.svg') .default

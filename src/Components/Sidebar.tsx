@@ -17,49 +17,21 @@ import {
   users,
   usersnew,
 } from "../Assets/Images";
+import Sidelink from "./Sidelink";
+
 
 export default function Sidebar() {
   return (
-    <div>
-      <div className="sidebar">
-        <Container>
-          <NavLink to="/dashboard" className="sidelinks" title="Dashboard">
-            <img src={dashboard} alt="" className="default" />
-            <img src={dashboardnew} alt="" className="active-img" />
-            <Typography className="text-default">Dashboard</Typography>
-          </NavLink>
-          <NavLink to="/innerpage" className="sidelinks" title="Analysis">
-            <img src={analyze} alt="" className="default" />
-            <img src={analyzenew} alt="" className="active-img" />
-            <Typography className="text-default">Analysis</Typography>
-          </NavLink>
-          <NavLink to="/inbox" className="sidelinks" title="Inbox">
-            <img src={inbox} alt="" className="default" />
-            <img src={inboxnew} alt="" className="active-img" />
-            <Typography className="text-default">Inbox</Typography>
-          </NavLink>
-          <NavLink to="/history" className="sidelinks" title="History">
-            <img src={history} alt="" className="default" />
-            <img src={historynew} alt="" className="active-img" />
-            <Typography className="text-default">History</Typography>
-          </NavLink>
-          <NavLink to="/user" className="sidelinks" title="Users">
-            <img src={users} alt="" className="default" />
-            <img src={usersnew} alt="" className="active-img" />
-            <Typography className="text-default">Users</Typography>
-          </NavLink>
-          <NavLink to="/maintenance" className="sidelinks" title="Maintenance">
-            <img src={maintenance} alt="" className="default" />
-            <img src={maintenancenew} alt="" className="active-img" />
-            <Typography className="text-default">Maintenance</Typography>
-          </NavLink>
-          <NavLink to="/setting" className="sidelinks" title="Setting">
-            <img src={setting} alt="" className="default" />
-            <img src={settingnew} alt="" className="active-img" />
-            <Typography className="text-default">Setting</Typography>
-          </NavLink>
-        </Container>
-      </div>
+    <div className="sidebar">
+      <Container>
+        <Sidelink link={'/dashboard'} title="Dashboard" default={dashboard} active={dashboardnew} alt="Dashboard" name="Dashboard" />
+        <Sidelink link={'/innerpage'} title="Innerpage" default={analyze} active={analyzenew} alt="Analysis" name="Analysis" />
+        <Sidelink link={'/inbox'} title="Inbox" default={inbox} active={inboxnew} alt="Inbox" name="Inbox" />
+        <Sidelink link={'/history'} title="History" default={history} active={historynew} alt="History" name="History" />
+        <Sidelink link={'/user'} title="Users" default={users} active={usersnew} alt="Users" name="Users" />
+        <Sidelink link={'/maintenance'} title="Maintenance" default={maintenance} active={maintenancenew} alt="Maintenance" name="Maintenance" />
+        <Sidelink link={'/setting'} title="Setting" default={setting} active={settingnew} alt="Setting" name="Setting" />
+      </Container>
     </div>
   );
 }

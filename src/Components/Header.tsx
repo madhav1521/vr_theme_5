@@ -1,7 +1,7 @@
-import { alpha, Box, Button, InputBase, SelectChangeEvent, styled, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { alpha, Box, Button, InputBase, SelectChangeEvent, styled, TextField, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import React from 'react'
 import {  useNavigate } from 'react-router';
-import { black_arrow, cmp_logo, notification, profile, searchicon, toggleicon } from '../Assets/Images';
+import { black_arrow, cmp_icon, cmp_logo, notification, profile, searchicon, toggleicon } from '../Assets/Images';
 import Dropdown from './Dropdown';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
@@ -23,95 +23,40 @@ export default function Header() {
     setAlignment(newAlignment);
   };
 
-  const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
-      width: 'auto',
-    },
-  }));
-  
-  const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }));
-
-  const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-      transition: theme.transitions.create('width'),
-      width: '100%',
-      [theme.breakpoints.up('sm')]: {
-        width: '12ch',
-        '&:focus': {
-          width: '20ch',
-        },
-      },
-    },
-  }));
-
   const [status, setStatus] = React.useState(true)
   const [search,setSearch] =React.useState(true)
     function toggle (){
       document.body.classList.toggle('setStatus')
+      // searchbar();
     }
-   
-
     function searchbar(){
       document.body.classList.toggle('setSearch')
     }
 
+    // const stickynav ={
+
+    // }
+
   return (
-    <div>
+    <>
+      <div className='overlaysearch' onClick={searchbar}></div>
       <div className='overlay' onClick={toggle}></div>
         <div className="header">
           <Box className="leftnav">
-            {/* <ToggleButtonGroup
-              value={alignment}
-              className="toggle-btn"
-              exclusive
-              onChange={handleAlignment}
-              aria-label="text alignment"
-            >
-              <ToggleButton value="left" aria-label="left aligned" >
-                <FormatAlignLeftIcon  color="warning" />
-              </ToggleButton>
-            </ToggleButtonGroup> */}
-             <Button onClick={searchbar} className="toggle-icon">
+             <Button  className="toggle-icon">
               <img src={toggleicon} alt="" className="toggle" onClick={toggle} />
             </Button>
             
             <img src={cmp_logo} alt="" className="brand" /> 
-
-            <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
+            <img src={cmp_icon} alt="" className="brand-icon" /> 
             
-            {/* <div className="search-input">
+            {/* <TextField variant='outlined' type="search" placeholder='Search' defaultValue="Search" className='search-input'/> */}
+
+            <div className="search-input">
               <input type="search" className="form-control"  placeholder="Search" ></input>
-            </div> */}
-            <Button onClick={searchbar} className="btn-close-search btn-close"><CloseRoundedIcon color="primary"/></Button> 
+            </div>
+            
+            <Button onClick={searchbar} className="btn-close-search btn-close"><CloseRoundedIcon color="primary" /></Button> 
 
             <Button className="search-btn" onClick={searchbar}>
               <img src={searchicon} alt="search-icon" />
@@ -125,6 +70,6 @@ export default function Header() {
             <Dropdown img={profile} name="John Doe" arrow={black_arrow} />
           </Box>
         </div>
-    </div>
+    </>
   )
 }
