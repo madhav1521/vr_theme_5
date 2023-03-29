@@ -53,7 +53,7 @@ export default function BasicTabs(props: any) {
         onChange={handleChange}
         aria-label="basic tabs example"
         className="inner-tabs"
-        sx={{ borderBottom: '1px solid #ADADAD', marginBottom: '25px' }}
+        sx={{  marginBottom: '25px' }}
       >
         <Tab label="Tab 1" className="tabs" {...a11yProps(0)} />
         <Tab label="Tab 2" className="tabs" {...a11yProps(1)} />

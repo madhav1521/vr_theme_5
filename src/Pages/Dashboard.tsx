@@ -1,11 +1,9 @@
 import { Box, Card, Grid, Link, Paper, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import React from 'react'
 import { add_product, country_sales, datagraph, dollar, layer, money_bag, star } from '../Assets/Images'
-import BasicTabs from '../Components/BasicTabs'
 import Header from '../Components/Header'
 import Sidebar from '../Components/Sidebar'
-import Sticker from '../Components/sticker'
-import Tabs, { tabsClasses } from '@mui/material/Tabs';
+import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
 
@@ -40,7 +38,9 @@ export default function Dashboard() {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
-
+  function low(s: any) {
+    return s.toLowerCase();
+  }
 
   return (
     <div className='main-container'>
@@ -49,74 +49,84 @@ export default function Dashboard() {
         <Sidebar />
         <div className='main-content'>
           <Typography component="h2" variant="h4" className='page-title'>Dashboard</Typography>
-
-          <Grid container spacing={4} className='' >
-            <Grid item xs={12} className="">
-              <Card className='card'>
-                <Grid container className='' >
-                  <Grid item className=" sticker">
-                    <Box><img src={star} alt="star" /></Box>
-                    <Box>
-                      <Typography component="h3" variant="h5" className='card-numbers'>23,456</Typography>
-                      <Typography component="h6" variant="body2" className='card-text'>Added Products</Typography>
+          {/* Card starts
+        ------------------------------------------------------------------------------------------------------------------------------- */}
+          <Grid container spacing={4}>
+            <Grid item xs={12}>
+              <Card elevation={0}>
+                <Grid container >
+                  {/* <Grid item >
+                  <Box className='child'> */}
+                  <Grid item xs={6} sm={6} md={4} xl>
+                    <Box className=" sticker" >
+                      <Box><img src={star} alt="star" /></Box>
+                      <Box className="details-box">
+                        <Typography component="h3" variant="h5" className='card-numbers'>23,456</Typography>
+                        <Typography component="h6" variant="body2" className='card-text'>New Products</Typography>
+                      </Box>
+                    </Box>  
+                  </Grid>
+                  <Grid item xs={6} sm={6} md={4} xl>
+                    <Box className=" sticker" >
+                      <Box><img src={add_product} alt="add product" /></Box>
+                      <Box className="details-box">
+                        <Typography component="h3" variant="h5" className='card-numbers'>2345</Typography>
+                        <Typography component="h6" variant="body2" className='card-text'>Added Products </Typography>
+                      </Box>
                     </Box>
                   </Grid>
-                  <Grid item className="sticker">
-                    <Box><img src={add_product} alt="add product" /></Box>
-                    <Box>
-                      <Typography component="h3" variant="h5" className='card-numbers'>2345</Typography>
-                      <Typography component="h6" variant="body2" className='card-text'>New Products</Typography>
+                  <Grid item xs={6} sm={6} md={4} xl >
+                    <Box className=" sticker border-right" >
+                      <Box><img src={layer} alt="layer image" /></Box>
+                      <Box className="details-box">
+                        <Typography component="h3" variant="h5" className='card-numbers'>32,456</Typography>
+                        <Typography component="h6" variant="body2" className='card-text'>Total Products</Typography>
+                      </Box>
                     </Box>
                   </Grid>
-                  <Grid item className="sticker">
-                    <Box><img src={layer} alt="layer image" /></Box>
-                    <Box>
-                      <Typography component="h3" variant="h5" className='card-numbers'>32,456</Typography>
-                      <Typography component="h6" variant="body2" className='card-text'>Total Products</Typography>
+                  <Grid item xs={6} sm={6} md={4} xl >
+                    <Box className=" sticker border-right" >  
+                      <Box><img src={dollar} alt="dollar image" /></Box>
+                      <Box className="details-box">
+                        <Typography component="h3" variant="h5" className='card-numbers'>5678</Typography>
+                        <Typography component="h6" variant="body2" className='card-text'>Today's Sale</Typography>
+                      </Box>
                     </Box>
                   </Grid>
-                  <Grid item className="sticker">
-                    <Box><img src={dollar} alt="dollar image" /></Box>
-                    <Box>
-                      <Typography component="h3" variant="h5" className='card-numbers'>5678</Typography>
-                      <Typography component="h6" variant="body2" className='card-text'>Total Sale</Typography>
+                  <Grid item xs={6} sm={6} md={4} xl >
+                    <Box className=" sticker noborder border-right" >
+                      <Box><img src={money_bag} alt="bag image" /></Box>
+                      <Box className="details-box">
+                        <Typography component="h3" variant="h5" className='card-numbers'>33,5342</Typography>
+                        <Typography component="h6" variant="body2" className='card-text'>Total Sale</Typography>
+                      </Box>
                     </Box>
                   </Grid>
-                  <Grid item className="sticker">
-                    <Box><img src={money_bag} alt="bag image" /></Box>
-                    <Box>
-                      <Typography component="h3" variant="h5" className='card-numbers'>33,5342</Typography>
-                      <Typography component="h6" variant="body2" className='card-text'>New Products</Typography>
-                    </Box>
-                  </Grid>
+                  {/* </Box>
+                  </Grid> */}
                 </Grid>
               </Card>
             </Grid>
-            {/* </Grid>
-
-
-          <Grid container spacing={4} className=''> */}
+            {/* Data graph content starts
+              ------------------------------------------------------------------------------------------------------------------------------- */}
             <Grid item xs={12} sm={12} lg={8} className="sales">
-              <Card className='sales-card' >
+              <Card elevation={0} className='sales-card' >
                 <Box className="sales-heading">
                   <Typography component="h3" variant="h5" className='sales-text'>Sales</Typography>
-                  {/* <Box > */}
                   <Tabs value={value} onChange={handleChange} className='dash-tabs'>
                     <Tab label="Weekly" />
                     <Tab label="Monthly" />
                     <Tab label=" Yearly" />
                   </Tabs>
-                  {/* </Box> */}
-
                 </Box>
-                <Box className="img">
-                  <img src={datagraph} alt="data graph" className="datagraph img-fluid" />
+                <Box className="img datagraph">
+                  <img src={datagraph} alt="data graph" className=" img-fluid" />
                 </Box>
               </Card>
             </Grid>
 
             <Grid item xs={12} sm={12} lg={4} className="sales" >
-              <Card className='sales-card'>
+              <Card elevation={0} className='sales-card'>
                 <Typography component="h3" variant="h5" className='sales-text'>Sales by Country</Typography>
                 <Box className="country-sales-horizontal">
                   <Box className="img cycle">
@@ -127,24 +137,26 @@ export default function Dashboard() {
                     </Box>
                   </Box>
                   <Box className="country">
-                    <Box >
-                      <Typography component="h6" variant="body2" className='card-text props amc america'>United States of America</Typography>
-                      <Typography component="h6" variant="body2" className='card-text props amc russia'>Russia</Typography>
+                    <Box className="card-text">
+                      <Typography component="h6" variant="body2" className=' props america'>United States of America</Typography>
+                      <Typography component="h6" variant="body2" className=' props russia'>Russia</Typography>
                     </Box>
-                    <Box >
-                      <Typography component="h6" variant="body2" className='card-text props amc canada'>Canada</Typography>
-                      <Typography component="h6" variant="body2" className='card-text props amc india'>India</Typography>
+                    <Box className="card-text">
+                      <Typography component="h6" variant="body2" className=' props canada'>Canada</Typography>
+                      <Typography component="h6" variant="body2" className=' props india'>India</Typography>
                     </Box>
                   </Box>
                 </Box>
               </Card>
             </Grid>
+            {/* Table content starts
+              ------------------------------------------------------------------------------------------------------------------------------- */}
             <Grid item xs={12} className=''>
-              <Card className='sales-card'>
+              <Card elevation={0} className='sales-card'>
                 <Box className="sales-heading">
                   <Typography component="h3" variant="h5" className='sales-text'>Invoices</Typography>
                   <Box onClick={preventDefault}>
-                    <Link href="#" underline="hover"> {'View'} </Link>
+                    <Link href="#" className='views'> {'View All'} </Link>
                   </Box>
                 </Box>
                 <TableContainer >
@@ -169,7 +181,11 @@ export default function Dashboard() {
                           <TableCell align="left">{row.name}</TableCell>
                           <TableCell align="left">{row.email}</TableCell>
                           <TableCell align="left">{row.date}</TableCell>
-                          <TableCell align="left" className='success'>{row.status}</TableCell>
+                          <TableCell align="left">
+                            <span className={`${low(row.status)}`}>
+                              {row.status}
+                            </span>
+                            </TableCell>
                           <TableCell align="left">{row.amount}</TableCell>
                         </TableRow>
                       ))}

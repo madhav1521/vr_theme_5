@@ -6,10 +6,6 @@ import { error, info, upload_icon, valid, warn } from '../Assets/Images';
 import BasicTabs from '../Components/BasicTabs';
 import Header from '../Components/Header'
 import Sidebar from '../Components/Sidebar'
-import Tab from '@mui/material/Tab';
-// import TabContext from '@mui/lab/TabContext';
-// import TabList from '@mui/lab/TabList';
-// import TabPanel from '@mui/lab/TabPanel';
 
 export default function Innerpage() {
 
@@ -63,7 +59,6 @@ export default function Innerpage() {
     });
   };
 
-
   return (
     <div>
       <div className="main-container">
@@ -74,9 +69,9 @@ export default function Innerpage() {
             <Typography component="h2" variant="h4" className="page-title">
               Analysis
             </Typography>
-
-
-            <Card className="card users-page">
+            {/* column 1 starts
+              ------------------------------------------------------------------------------------------------------------------------------- */}
+            <Card elevation={0} className="users-page">
               <Typography component="h4" variant="h5" className="inner-heading" marginBottom="28px">
                 One Column
               </Typography>
@@ -93,31 +88,28 @@ export default function Innerpage() {
                     autoFocus
                   />
                 </Grid>
-
                 <Grid item xs={12}>
                   <Box>
-                    <FormControl variant="outlined" fullWidth>
+                  <FormControl variant="outlined" fullWidth>
                       <InputLabel id="demo-simple-select-outlined-label">Dropdown</InputLabel>
                       <Select
                         labelId="demo-simple-select-outlined-label"
                         id="demo-simple-select-outlined"
                         value={age1}
                         onChange={handleChange1}
-                        label="Country"
+                        label="Dropdown"
                         fullWidth
                         className="login-select text"
                       >
-                        <MenuItem value={12}>India</MenuItem>
-                        <MenuItem value={4}>America</MenuItem>
-                        <MenuItem value={5}>Africa</MenuItem>
-                        <MenuItem value={6}>China</MenuItem>
+                        <MenuItem value={10}>India</MenuItem>
+                        <MenuItem value={7}>America</MenuItem>
+                        <MenuItem value={8}>Africa</MenuItem>
+                        <MenuItem value={9}>China</MenuItem>
                       </Select>
                     </FormControl>
                   </Box>
                 </Grid>
-
                 <Grid item xs={12}>
-
                   <TextField
                     className="textarea text"
                     fullWidth
@@ -131,13 +123,14 @@ export default function Innerpage() {
                     aria-label="minimum height"
                     maxRows={5}
                   />
-
                 </Grid>
               </Grid>
+              {/* Column 2 starts
+              ------------------------------------------------------------------------------------------------------------------------------- */}
               <Typography component="h4" variant="h5" className="inner-heading">
                 Two Column
               </Typography>
-              <Grid container spacing={2}>
+              <Grid container columnSpacing={4} rowSpacing={2}>
                 <Grid item xs={12} sm={6}>
                   <TextField
                     autoComplete="name"
@@ -147,11 +140,9 @@ export default function Innerpage() {
                     label=" Name"
                     variant="outlined"
                     className="text"
-
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-
                   <TextField
                     fullWidth
                     label="Username"
@@ -161,9 +152,7 @@ export default function Innerpage() {
                     className='text'
                   />
                 </Grid>
-
                 <Grid item xs={12} sm={6}>
-
                   <FormControl variant="outlined">
                     <InputLabel className='text' htmlFor="outlined-adornment-password">Password</InputLabel>
                     <OutlinedInput
@@ -175,21 +164,18 @@ export default function Innerpage() {
                             aria-label="toggle password visibility"
                             onClick={handleClickShowPassword1}
                             onMouseDown={handleMouseDownPassword1}
+                            edge="end"
                           >
-                            {showPassword1 ? <VisibilityOff /> : <Visibility />}
+                            {showPassword1 ? <VisibilityOff color="warning"/> : <Visibility color="warning"/>}
                           </IconButton>
                         </InputAdornment>
                       }
                       label="Password"
                     />
                   </FormControl>
-
                 </Grid>
-
-
                 <Grid item xs={12} sm={6}>
                   <Box>
-
                     <FormControl variant="outlined" fullWidth>
                       <InputLabel id="demo-simple-select-outlined-label">Dropdown</InputLabel>
                       <Select
@@ -210,10 +196,12 @@ export default function Innerpage() {
                   </Box>
                 </Grid>
               </Grid>
+              {/* Column 3 starts
+              ------------------------------------------------------------------------------------------------------------------------------- */}
               <Typography component="h4" variant="h5" className="inner-heading">
                 Three Column
               </Typography>
-              <Grid container spacing={2}>
+              <Grid container columnSpacing={4} rowSpacing={2}>
                 <Grid item xs={12} sm={4}>
                   <TextField
                     autoComplete="given-name"
@@ -223,7 +211,6 @@ export default function Innerpage() {
                     label="Focus"
                     variant="outlined"
                     className="text"
-
                   />
                 </Grid>
 
@@ -239,8 +226,9 @@ export default function Innerpage() {
                             aria-label="toggle password visibility"
                             onClick={handleClickShowPassword2}
                             onMouseDown={handleMouseDownPassword2}
+                            edge="end"
                           >
-                            {showPassword2 ? <VisibilityOff /> : <Visibility />}
+                            {showPassword2 ? <VisibilityOff color="warning"/> : <Visibility color="warning"/>}
                           </IconButton>
                         </InputAdornment>
                       }
@@ -262,10 +250,12 @@ export default function Innerpage() {
                   </Box>
                 </Grid>
               </Grid>
+              {/* Column 4 starts
+              ------------------------------------------------------------------------------------------------------------------------------- */}
               <Typography component="h4" variant="h5" className="inner-heading">
                 Four Column
               </Typography>
-              <Grid container spacing={2}>
+              <Grid container columnSpacing={4} rowSpacing={2}>
                 <Grid item xs={12} sm={6} lg={3}>
                   <Box
                     component="form"
@@ -278,7 +268,6 @@ export default function Innerpage() {
                       fullWidth
                       id="outlined-error-helper-text"
                       label="Designation"
-                      // defaultValue="UI Designer"
                       helperText="Enter Valid data"
                       variant="outlined"
                       autoComplete="email"
@@ -311,13 +300,13 @@ export default function Innerpage() {
                 <Grid item xs={12} sm={6} lg={3}>
                   <Box>
                     <FormControl variant="outlined" fullWidth>
-                      <InputLabel id="demo-simple-select-outlined-label">Dropdown</InputLabel>
+                      <InputLabel id="demo-simple-select-outlined-label">Select</InputLabel>
                       <Select
                         labelId="demo-simple-select-outlined-label"
                         id="demo-simple-select-outlined"
                         value={age3}
                         onChange={handleChange3}
-                        label="Dropdown"
+                        label="Select"
                         fullWidth
                         className="login-select text"
                       >
@@ -330,10 +319,12 @@ export default function Innerpage() {
                   </Box>
                 </Grid>
               </Grid>
+              {/* Design elements starts
+              ------------------------------------------------------------------------------------------------------------------------------- */}
               <Typography component="h4" variant="h5" className="inner-heading">
                 Other Design Elements
               </Typography>
-              <Typography component="h4" variant="h6" className="card-head inner-head">
+              <Typography component="h4" variant="h6" className="card-head inner-head file-upload">
                 File Upload
               </Typography>
 
@@ -347,26 +338,24 @@ export default function Innerpage() {
                   No item Selected
                 </Typography>
               </Stack>
-              <Typography component="h4" variant="h5" className="card-head inner-head" marginTop="38px">
+              <Typography component="h4" variant="h5" className="card-head inner-head option-head" marginTop="38px">
                 Radio Button
               </Typography>
 
-
               <Grid item xs={12} >
-                <FormControl className="radio-check">
+                <FormControl className="radio-check" >
                   <RadioGroup
                     row
                     aria-labelledby="demo-row-radio-buttons-group-label"
                     name="row-radio-buttons-group"
                   >
-                    <FormControlLabel value="female" control={<Radio />} label="Option 1" />
-                    <FormControlLabel value="male" control={<Radio />} label="Option 2" />
+                    <FormControlLabel value="female" control={<Radio />} label="&nbsp;Option 1" />&nbsp;&nbsp;&nbsp;
+                    <FormControlLabel value="male" control={<Radio />} label="&nbsp;Option 2" />
                   </RadioGroup>
                 </FormControl>
               </Grid>
 
-
-              <Typography component="h4" variant="h5" className="card-head inner-head" marginTop="31px">
+              <Typography component="h4" variant="h5" className="card-head inner-head option-head" marginTop="31px">
                 Check Box
               </Typography>
               <Grid item xs={12}>
@@ -374,21 +363,21 @@ export default function Innerpage() {
                   control={
                     <Checkbox color="primary" />
                   }
-                  label="Option 1"
-                />
+                  label="&nbsp;Option 1"
+                />&nbsp;&nbsp;&nbsp;
                 <FormControlLabel
                   control={
                     <Checkbox color="primary" />
                   }
-                  label="Option 2"
+                  label="&nbsp;Option 2"
                 />
               </Grid>
-
+              {/* Snackbar starts
+              ------------------------------------------------------------------------------------------------------------------------------- */}
               <Typography component="h4" variant="h5" className="card-head inner-head" marginTop="31px">
                 Snackbar
               </Typography>
-
-              <Grid container spacing={2.5} className="validation-notes">
+              <Grid container rowSpacing={3} columnSpacing={4} className="validation-notes">
                 <Grid item xs={12} sm={6}>
                   <Box className="text-message text-danger">
                     <img src={error} alt="" />
@@ -396,15 +385,15 @@ export default function Innerpage() {
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <Box className="text-message text-warn">
-                    <img src={warn} alt="" />
-                    <Typography component="h6" variant="body2" className=' warn-ic'>This is a warning message!</Typography>
-                  </Box>
-                </Grid>
-                <Grid item xs={12} sm={6}>
                   <Box className="text-message text-info">
                     <img src={info} alt="" />
                     <Typography component="h6" variant="body2" className=' info-ic'>This is an information message!</Typography>
+                  </Box>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <Box className="text-message text-warn">
+                    <img src={warn} alt="" />
+                    <Typography component="h6" variant="body2" className=' warn-ic'>This is a warning message!</Typography>
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -417,31 +406,21 @@ export default function Innerpage() {
               <Typography component="h4" variant="h5" className="card-head inner-head">
                 Call to Action
               </Typography>
-              <Button
-                type="submit"
-                disableElevation
-                variant="contained"
-                sx={{ border: 0 }}
-                className="primary-btn prim-sec"
-                onClick={() => {
-                  navigate("/dashboard");
-                }}
-              >
-                Primary
-              </Button>
-
-              <Button sx={{ ml: 2.5 }} className="prim-sec" variant="outlined" onClick={handleClickOpen}>
-                Secondary
-              </Button>
-
+              <Box className="prim-sec">
+                <Button type="submit" disableElevation variant="contained" className="primary-btn" onClick={() => { navigate("/"); }} >
+                  Primary
+                </Button>
+                <Button className="secondary-btn" variant="outlined" onClick={() => { navigate("/"); }} >
+                  Secondary
+                </Button>
+              </Box>
+              {/* Tabs starts
+              ------------------------------------------------------------------------------------------------------------------------------- */}
               <Typography component="h4" variant="h5" className="card-head inner-head">
                 Tabs
               </Typography>
-
               <BasicTabs />
             </Card>
-
-
           </div>
         </div>
       </div>
