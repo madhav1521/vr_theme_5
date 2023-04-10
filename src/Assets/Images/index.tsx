@@ -35,5 +35,5 @@ export const error = require('./ic-error.svg') .default
 export const info = require('./ic-info.svg') .default
 export const valid = require('./ic-success.svg') .default
 export const warn = require('./ic-warn.svg') .default
-export const select_arrow = require('./select-arrow.svg') .default
+export const select_arrow = require('./select-arrow.svg') .default 
 // export const check = require('./check-tick.svg') .default

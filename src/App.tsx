@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { mytheme } from "./myTheme";
+import { mytheme } from "./App.theme";
 import { ThemeProvider } from "@mui/material";
 import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";

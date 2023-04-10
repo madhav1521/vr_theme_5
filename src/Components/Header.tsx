@@ -1,4 +1,4 @@
-import { Box, Button, SelectChangeEvent } from '@mui/material';
+import { Box, Button, Link, SelectChangeEvent } from '@mui/material';
 import React from 'react'
 import {  useNavigate } from 'react-router';
 import { black_arrow, cmp_icon, cmp_logo, notification, profile, searchicon, toggleicon } from '../Assets/Images';
@@ -38,12 +38,12 @@ export default function Header() {
         <div className="header">
           {/* Right header section starts
           ----------------------------------------------------------------------------------------------------------------------------------- */}
-          <Box className="leftnav">
+          <Box className="leftnavbar">
              <Button  className="toggle-icon">
               <img src={toggleicon} alt="" className="toggle" onClick={toggle} />
             </Button>
-            <img src={cmp_logo} alt="" className="brand"  onClick={() => {navigate("/");}}/> 
-            <img src={cmp_icon} alt="" className="brand-icon"  onClick={() => {navigate("/");}}/> 
+            <Link href='#' title='brand-logo'><img src={cmp_logo} alt="" className="brand"  onClick={() => {navigate("/");}}/> </Link>
+            <Link href='#' title='brand-logo'><img src={cmp_icon} alt="" className="brand-icon"  onClick={() => {navigate("/");}}/> </Link>
             <div className="search-input">
               <input type="search" className="form-control"  placeholder="Search" ></input>
             </div>
@@ -52,7 +52,7 @@ export default function Header() {
           </Box>
           {/* Right header section starts
           ----------------------------------------------------------------------------------------------------------------------------------- */}
-          <Box className="rightnav" marginRight="27px">
+          <Box className="rightnavbar" marginRight="27px">
             <Button className="search-btn" onClick={searchbar}>
               <img src={searchicon} alt="search-icon" />
             </Button>

@@ -66,13 +66,13 @@ export default function Innerpage() {
         <div className="wrapper">
           <Sidebar />
           <div className="main-content">
-            <Typography component="h2" variant="h4" className="page-title">
+            <Typography component="h2" variant="h3" className="page-title" marginBottom="23px">
               Analysis
             </Typography>
             {/* column 1 starts
               ------------------------------------------------------------------------------------------------------------------------------- */}
             <Card elevation={0} className="users-page">
-              <Typography component="h4" variant="h5" className="inner-heading" marginBottom="28px">
+              <Typography component="h4" variant="h5" className="content-heading" marginBottom="15px">
                 One Column
               </Typography>
               <Grid container spacing={2}>
@@ -84,17 +84,15 @@ export default function Innerpage() {
                     id="Name"
                     label="Name"
                     variant="outlined"
-                    className="text"
                     autoFocus
                   />
                 </Grid>
                 <Grid item xs={12}>
                   <Box>
-                  <FormControl variant="outlined" fullWidth>
+                    <FormControl variant="outlined" fullWidth>
                       <InputLabel id="demo-simple-select-outlined-label">Dropdown</InputLabel>
                       <Select
                         labelId="demo-simple-select-outlined-label"
-                        id="demo-simple-select-outlined"
                         value={age1}
                         onChange={handleChange1}
                         label="Dropdown"
@@ -111,23 +109,20 @@ export default function Innerpage() {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    className="textarea text"
                     fullWidth
-                    variant="outlined"
-                    multiline
+                    className="textarea"
+                    id="outlined-multiline-static"
+                    label="Text area"                    
                     type="textarea"
-                    id="textarea"
-                    minRows={1}
-                    name="textarea"
-                    label="Text area"
-                    aria-label="minimum height"
-                    maxRows={5}
+                    multiline
+                    rows={4}
+                    defaultValue="Default Value"
                   />
                 </Grid>
               </Grid>
               {/* Column 2 starts
               ------------------------------------------------------------------------------------------------------------------------------- */}
-              <Typography component="h4" variant="h5" className="inner-heading">
+              <Typography component="h4" variant="h5" className="content-heading" marginTop= "46px" marginBottom= "16px" >
                 Two Column
               </Typography>
               <Grid container columnSpacing={4} rowSpacing={2}>
@@ -139,7 +134,6 @@ export default function Innerpage() {
                     id="Name"
                     label=" Name"
                     variant="outlined"
-                    className="text"
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -149,14 +143,12 @@ export default function Innerpage() {
                     defaultValue="jhondoe"
                     variant="outlined"
                     autoComplete="name"
-                    className='text'
                   />
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <FormControl variant="outlined">
-                    <InputLabel className='text' htmlFor="outlined-adornment-password">Password</InputLabel>
+                    <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                     <OutlinedInput
-                      id="outlined-adornment-password"
                       type={showPassword1 ? 'text' : 'password'}
                       endAdornment={
                         <InputAdornment position="end">
@@ -166,7 +158,7 @@ export default function Innerpage() {
                             onMouseDown={handleMouseDownPassword1}
                             edge="end"
                           >
-                            {showPassword1 ? <VisibilityOff color="warning"/> : <Visibility color="warning"/>}
+                            {showPassword1 ? <VisibilityOff color="warning" /> : <Visibility color="warning" />}
                           </IconButton>
                         </InputAdornment>
                       }
@@ -180,12 +172,11 @@ export default function Innerpage() {
                       <InputLabel id="demo-simple-select-outlined-label">Dropdown</InputLabel>
                       <Select
                         labelId="demo-simple-select-outlined-label"
-                        id="demo-simple-select-outlined"
                         value={age2}
                         onChange={handleChange2}
                         label="Dropdown"
                         fullWidth
-                        className="login-select text"
+                        className="login-select"
                       >
                         <MenuItem value={11}>India</MenuItem>
                         <MenuItem value={1}>America</MenuItem>
@@ -198,7 +189,7 @@ export default function Innerpage() {
               </Grid>
               {/* Column 3 starts
               ------------------------------------------------------------------------------------------------------------------------------- */}
-              <Typography component="h4" variant="h5" className="inner-heading">
+              <Typography component="h4" variant="h5" className="content-heading" marginTop= "46px" marginBottom= "16px">
                 Three Column
               </Typography>
               <Grid container columnSpacing={4} rowSpacing={2}>
@@ -210,15 +201,13 @@ export default function Innerpage() {
                     id="focus"
                     label="Focus"
                     variant="outlined"
-                    className="text"
                   />
                 </Grid>
 
                 <Grid item xs={12} sm={4}>
                   <FormControl variant="outlined">
-                    <InputLabel className='text' htmlFor="outlined-adornment-password">Password</InputLabel>
+                    <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                     <OutlinedInput
-                      id="outlined-adornment-password"
                       type={showPassword2 ? 'text' : 'password'}
                       endAdornment={
                         <InputAdornment position="end">
@@ -228,7 +217,7 @@ export default function Innerpage() {
                             onMouseDown={handleMouseDownPassword2}
                             edge="end"
                           >
-                            {showPassword2 ? <VisibilityOff color="warning"/> : <Visibility color="warning"/>}
+                            {showPassword2 ? <VisibilityOff color="warning" /> : <Visibility color="warning" />}
                           </IconButton>
                         </InputAdornment>
                       }
@@ -245,14 +234,14 @@ export default function Innerpage() {
                   >
                     <FormControl disabled fullWidth variant="outlined">
                       <InputLabel htmlFor="component-disabled">Disabled</InputLabel>
-                      <OutlinedInput className='disabled text' id="component-disabled" defaultValue="johndoe" label="Disabled" />
+                      <OutlinedInput className='disabled' id="component-disabled" defaultValue="johndoe" label="Disabled" />
                     </FormControl>
                   </Box>
                 </Grid>
               </Grid>
               {/* Column 4 starts
               ------------------------------------------------------------------------------------------------------------------------------- */}
-              <Typography component="h4" variant="h5" className="inner-heading">
+              <Typography component="h4" variant="h5" className="content-heading" marginTop= "46px" marginBottom= "16px">
                 Four Column
               </Typography>
               <Grid container columnSpacing={4} rowSpacing={2}>
@@ -282,7 +271,6 @@ export default function Innerpage() {
                     id="Name"
                     label=" Name"
                     variant="outlined"
-                    className="text"
                     helperText="Enter your full Name as per ID "
                   />
                 </Grid>
@@ -303,12 +291,11 @@ export default function Innerpage() {
                       <InputLabel id="demo-simple-select-outlined-label">Select</InputLabel>
                       <Select
                         labelId="demo-simple-select-outlined-label"
-                        id="demo-simple-select-outlined"
                         value={age3}
                         onChange={handleChange3}
                         label="Select"
                         fullWidth
-                        className="login-select text"
+                        className="login-select"
                       >
                         <MenuItem value={10}>India</MenuItem>
                         <MenuItem value={7}>America</MenuItem>
@@ -321,10 +308,10 @@ export default function Innerpage() {
               </Grid>
               {/* Design elements starts
               ------------------------------------------------------------------------------------------------------------------------------- */}
-              <Typography component="h4" variant="h5" className="inner-heading">
+              <Typography component="h4" variant="h5" className="content-heading" marginTop= "46px" marginBottom= "24px">
                 Other Design Elements
               </Typography>
-              <Typography component="h4" variant="h6" className="card-head inner-head file-upload">
+              <Typography variant="h6" className="inner-head file-upload">
                 File Upload
               </Typography>
 
@@ -338,7 +325,7 @@ export default function Innerpage() {
                   No item Selected
                 </Typography>
               </Stack>
-              <Typography component="h4" variant="h5" className="card-head inner-head option-head" marginTop="38px">
+              <Typography variant="h6" className="inner-head" >
                 Radio Button
               </Typography>
 
@@ -349,13 +336,13 @@ export default function Innerpage() {
                     aria-labelledby="demo-row-radio-buttons-group-label"
                     name="row-radio-buttons-group"
                   >
-                    <FormControlLabel value="female" control={<Radio />} label="&nbsp;Option 1" />&nbsp;&nbsp;&nbsp;
-                    <FormControlLabel value="male" control={<Radio />} label="&nbsp;Option 2" />
+                    <FormControlLabel value="female" control={<Radio />} label="Option 1" />&nbsp;&nbsp;&nbsp;
+                    <FormControlLabel value="male" control={<Radio />} label="Option 2" />
                   </RadioGroup>
                 </FormControl>
               </Grid>
 
-              <Typography component="h4" variant="h5" className="card-head inner-head option-head" marginTop="31px">
+              <Typography variant="h6" className="inner-head">
                 Check Box
               </Typography>
               <Grid item xs={12}>
@@ -363,18 +350,18 @@ export default function Innerpage() {
                   control={
                     <Checkbox color="primary" />
                   }
-                  label="&nbsp;Option 1"
+                  label="Option 1"
                 />&nbsp;&nbsp;&nbsp;
                 <FormControlLabel
                   control={
                     <Checkbox color="primary" />
                   }
-                  label="&nbsp;Option 2"
+                  label="Option 2"
                 />
               </Grid>
               {/* Snackbar starts
               ------------------------------------------------------------------------------------------------------------------------------- */}
-              <Typography component="h4" variant="h5" className="card-head inner-head" marginTop="31px">
+              <Typography variant="h6" className="inner-head">
                 Snackbar
               </Typography>
               <Grid container rowSpacing={3} columnSpacing={4} className="validation-notes">
@@ -403,20 +390,20 @@ export default function Innerpage() {
                   </Box>
                 </Grid>
               </Grid>
-              <Typography component="h4" variant="h5" className="card-head inner-head">
+              <Typography variant="h6" className=" inner-head" >
                 Call to Action
               </Typography>
-              <Box className="prim-sec">
-                <Button type="submit" disableElevation variant="contained" className="primary-btn" onClick={() => { navigate("/"); }} >
+              <Box className="cta-btn">
+                <Button type="submit" disableElevation variant="contained" className="primary-btn" onClick={() => { navigate("/dashboard"); }} >
                   Primary
                 </Button>
-                <Button className="secondary-btn" variant="outlined" onClick={() => { navigate("/"); }} >
+                <Button className="secondary-btn" variant="outlined" onClick={() => { navigate("/dashboard"); }} >
                   Secondary
                 </Button>
               </Box>
               {/* Tabs starts
               ------------------------------------------------------------------------------------------------------------------------------- */}
-              <Typography component="h4" variant="h5" className="card-head inner-head">
+              <Typography variant="h6" className="inner-head">
                 Tabs
               </Typography>
               <BasicTabs />

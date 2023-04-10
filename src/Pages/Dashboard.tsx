@@ -1,4 +1,4 @@
-import { Box, Card, Grid, Link, Paper, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
+import { Box, Card, Grid, Link, Paper, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Button } from '@mui/material'
 import React from 'react'
 import { add_product, country_sales, datagraph, dollar, layer, money_bag, star } from '../Assets/Images'
 import Header from '../Components/Header'
@@ -48,72 +48,68 @@ export default function Dashboard() {
       <div className='wrapper'>
         <Sidebar />
         <div className='main-content'>
-          <Typography component="h2" variant="h4" className='page-title'>Dashboard</Typography>
-          {/* Card starts
-        ------------------------------------------------------------------------------------------------------------------------------- */}
+          <Typography component="h2" variant="h3" className='page-title' marginBottom="23px">Dashboard</Typography>
           <Grid container spacing={4}>
             <Grid item xs={12}>
               <Card elevation={0}>
+                {/* Card starts
+                ------------------------------------------------------------------------------------------------------------------------------- */}
                 <Grid container >
-                  {/* <Grid item >
-                  <Box className='child'> */}
                   <Grid item xs={6} sm={6} md={4} xl>
                     <Box className=" sticker" >
-                      <Box><img src={star} alt="star" /></Box>
+                      <img src={star} alt="star" />
                       <Box className="details-box">
-                        <Typography component="h3" variant="h5" className='card-numbers'>23,456</Typography>
+                        <Typography variant="h3" className='card-numbers'>23,456</Typography>
                         <Typography component="h6" variant="body2" className='card-text'>New Products</Typography>
                       </Box>
                     </Box>  
                   </Grid>
                   <Grid item xs={6} sm={6} md={4} xl>
                     <Box className=" sticker" >
-                      <Box><img src={add_product} alt="add product" /></Box>
+                      <img src={add_product} alt="add product" />
                       <Box className="details-box">
-                        <Typography component="h3" variant="h5" className='card-numbers'>2345</Typography>
+                        <Typography variant="h3" className='card-numbers'>2345</Typography>
                         <Typography component="h6" variant="body2" className='card-text'>Added Products </Typography>
                       </Box>
                     </Box>
                   </Grid>
                   <Grid item xs={6} sm={6} md={4} xl >
                     <Box className=" sticker border-right" >
-                      <Box><img src={layer} alt="layer image" /></Box>
+                      <img src={layer} alt="layer image" />
                       <Box className="details-box">
-                        <Typography component="h3" variant="h5" className='card-numbers'>32,456</Typography>
+                        <Typography variant="h3" className='card-numbers'>32,456</Typography>
                         <Typography component="h6" variant="body2" className='card-text'>Total Products</Typography>
                       </Box>
                     </Box>
                   </Grid>
                   <Grid item xs={6} sm={6} md={4} xl >
                     <Box className=" sticker border-right" >  
-                      <Box><img src={dollar} alt="dollar image" /></Box>
+                      <img src={dollar} alt="dollar image" />
                       <Box className="details-box">
-                        <Typography component="h3" variant="h5" className='card-numbers'>5678</Typography>
+                        <Typography variant="h3" className='card-numbers'>5678</Typography>
                         <Typography component="h6" variant="body2" className='card-text'>Today's Sale</Typography>
                       </Box>
                     </Box>
                   </Grid>
                   <Grid item xs={6} sm={6} md={4} xl >
                     <Box className=" sticker noborder border-right" >
-                      <Box><img src={money_bag} alt="bag image" /></Box>
+                      <img src={money_bag} alt="bag image" />
                       <Box className="details-box">
-                        <Typography component="h3" variant="h5" className='card-numbers'>33,5342</Typography>
+                        <Typography variant="h3" className='card-numbers'>33,5342</Typography>
                         <Typography component="h6" variant="body2" className='card-text'>Total Sale</Typography>
                       </Box>
                     </Box>
                   </Grid>
-                  {/* </Box>
-                  </Grid> */}
                 </Grid>
               </Card>
             </Grid>
             {/* Data graph content starts
               ------------------------------------------------------------------------------------------------------------------------------- */}
-            <Grid item xs={12} sm={12} lg={8} className="sales">
+            <Grid item xs={12} sm={12} lg={8} >
               <Card elevation={0} className='sales-card' >
-                <Box className="sales-heading">
-                  <Typography component="h3" variant="h5" className='sales-text'>Sales</Typography>
-                  <Tabs value={value} onChange={handleChange} className='dash-tabs'>
+                <Box className="sales-heading-line">
+                  <Typography component="h3" variant="h5" className='content-heading'>Sales</Typography>
+                  <Tabs value={value} onChange={handleChange} variant="scrollable" scrollButtons="auto" allowScrollButtonsMobile aria-label="scrollable auto tabs example" className='dash-tabs'>
                     <Tab label="Weekly" />
                     <Tab label="Monthly" />
                     <Tab label=" Yearly" />
@@ -125,9 +121,9 @@ export default function Dashboard() {
               </Card>
             </Grid>
 
-            <Grid item xs={12} sm={12} lg={4} className="sales" >
+            <Grid item xs={12} sm={12} lg={4} >
               <Card elevation={0} className='sales-card'>
-                <Typography component="h3" variant="h5" className='sales-text'>Sales by Country</Typography>
+                <Typography component="h3" variant="h5" className='content-heading'>Sales by Country</Typography>
                 <Box className="country-sales-horizontal">
                   <Box className="img cycle">
                     <img src={country_sales} alt="country sales" className="pie-chart img-fluid" />
@@ -136,27 +132,27 @@ export default function Dashboard() {
                       <Typography component="h6" variant="body2" className='card-text'>USA</Typography>
                     </Box>
                   </Box>
-                  <Box className="country">
-                    <Box className="card-text">
+                  <ul className="country">
+                    <li className="card-text">
                       <Typography component="h6" variant="body2" className=' props america'>United States of America</Typography>
                       <Typography component="h6" variant="body2" className=' props russia'>Russia</Typography>
-                    </Box>
-                    <Box className="card-text">
+                    </li>
+                    <li className="card-text">
                       <Typography component="h6" variant="body2" className=' props canada'>Canada</Typography>
                       <Typography component="h6" variant="body2" className=' props india'>India</Typography>
-                    </Box>
-                  </Box>
+                    </li>
+                  </ul>
                 </Box>
               </Card>
             </Grid>
             {/* Table content starts
               ------------------------------------------------------------------------------------------------------------------------------- */}
-            <Grid item xs={12} className=''>
+            <Grid item xs={12}>
               <Card elevation={0} className='sales-card'>
-                <Box className="sales-heading">
-                  <Typography component="h3" variant="h5" className='sales-text'>Invoices</Typography>
+                <Box className="sales-heading-line">
+                  <Typography component="h3" variant="h5" className='content-heading'>Invoices</Typography>
                   <Box onClick={preventDefault}>
-                    <Link href="#" className='views'> {'View All'} </Link>
+                    <Button className='views' title='views-button'> {'View All'} </Button>
                   </Box>
                 </Box>
                 <TableContainer >

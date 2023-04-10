@@ -1,20 +1,5 @@
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import {
-  Box,
-  Button,
-  Container,
-  CssBaseline,
-  FormControl,
-  IconButton,
-  ImageList,
-  ImageListItem,
-  InputAdornment,
-  InputLabel,
-  OutlinedInput,
-  TextField,
-  Typography,
-  Link,
-} from "@mui/material";
+import { Box, Button, Container, CssBaseline, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField, Typography, Link, } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import React from "react";
 import { useNavigate } from "react-router";
@@ -44,31 +29,32 @@ export default function Login() {
         <CssBaseline />
         <Container className="login-container">
           <Grid container alignItems="center">
+            {/* mockup-section starts
+            ---------------------------------------------------------------------------------------------------------------------------------- */}
             <Grid item xs={0} md={6} >
-              <Box className="login-left">
+              <Box className="login-mockup">
                   <img src={login_image}
                     alt=""
                     loading="lazy"
-                    className="login-img"
+                    className="hero-image"
                   />
                   <img src={login_net}
                     alt=""
                     loading="lazy"
                     className="login-net"
                   />
-
-
               </Box>
             </Grid>
-
+            {/* login-form starts
+            ---------------------------------------------------------------------------------------------------------------------------------- */}
             <Grid item xs={12} md={6}>
-              <Box className="login-right">
-                <img src={cmp_logo} alt="logo" className="logo" />
-                <Typography variant="h1" component="h2" className="login-heading">
+              <Box className="login-form">
+                <Link href="/" title="brand-logo"> <img src={cmp_logo} alt="logo"  /></Link>
+                <Typography variant="h1" className="login-heading" marginBottom= "37px">
                   We are <strong className="strong-text">experts</strong> in
                   business, marketing, growth, & sales.
                 </Typography>
-                <Typography variant="h5" component="h3" className="subheading">
+                <Typography variant="h4" className="login-subheading" marginBottom= "24px">
                   Login into your account
                 </Typography>
                 <Box className="login-name">
@@ -102,31 +88,17 @@ export default function Login() {
                           }
                           label="Password"
                         />
-
                         <Box className="btn-line">
-                          <Button
-                            type="submit"
-                            disableElevation
-                            variant="contained"
-                            className="login-btn"
-                            onClick={() => {
-                              navigate("/dashboard");
-                            }}
-                          >
-                            <Typography
-                              variant="body1"
-                              component="span"
-                              className="login"
-                            >
+                          <Button type="submit" disableElevation variant="contained" className="login-btn" onClick={() => {navigate("/dashboard"); }}>
+                            <Typography variant="body1" component="span" className="login" >
                               Login
                             </Typography>
                           </Button>
-                          <Link href="#" className="fp">
+                          <Link href="#" className="forgot-password" title="forgot-password">
                             Forgot Password?
                           </Link>
                         </Box>
-
-                        <Typography variant="body1" component="h6" className="reg-here">
+                        <Typography variant="body1" component="h6" className="register-here">
                           Are you a new Member? <Link href="#" className="register">Register here</Link>
                         </Typography>
                       </FormControl>
